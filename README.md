@@ -57,6 +57,23 @@ The API uses JWT Bearer Authentication to support authenticated access to applic
 
 The application uses Microsoft SQL Server with Entity Framework Core for data access and database migrations.
 
+## Data Access
+
+The application uses Entity Framework Core with an `AppDbContext` to manage relational application data.
+
+The database context includes entities for:
+
+- Products
+- Brands
+- Customers
+- Orders
+- Order line items
+- Branches
+
+DAO classes separate database operations from API controller logic. For example, `ProductDAO` uses Entity Framework Core, LINQ, and asynchronous queries to retrieve products associated with a specific brand.
+
+This structure separates API request handling from data-access responsibilities and keeps the application easier to maintain.
+
 ## API Documentation
 
 Swagger / Swashbuckle is included for API documentation and endpoint testing.
